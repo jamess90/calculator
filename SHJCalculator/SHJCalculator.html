@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link id="addCss" rel="stylesheet" href="css/SHJCalStyle.css">
+   
+    <script type="text/javascript" src="js/SHJCalConstant.js"></script>
+    <script type="text/javascript" src="js/SHJCalculator.js"></script>
+    <script type="text/javascript" src="js/SHJScientificCalculator.js"></script>
+    <script type="text/javascript" src="js/SHJCalMain.js"></script>
+
+</head>
+<body id="body">
+    <h2 align="center">계 산 기</h2>
+    
+    <div align="left" style="width : 500px; margin-right: 270px;">
+        <select name="example" id="selectType" style="width:100px; height:40px; font-size: 18px;">
+            <option>일반용</option>
+            <option>공학용</option>
+        </select>
+        <select name="example" id="selectColor" style="width:100px; height:40px; font-size: 18px;">
+            <option>흰색</option>
+            <option>노란색</option>
+            <option>오렌지색</option>
+            <option>보라색</option>
+            <option>초록색</option>
+            <option>파란색</option>
+            <option>분홍색</option>
+            <option>빨강색</option>
+        </select>
+        <td><input type="button" value="계산기생성" id="addBtn"></td>
+    </div>
+
+    <script>
+        window.onload = function() {
+            fnStartCalc();
+        }
+    </script>    
+    <script type="calViewTag" id="calViewTag">
+        
+            <table border="0" align="center" cellspacing="0" style="border:3px solid gray; box-shadow: currentColor; padding:8px; margin:20px 0px 0px 20px;">
+                <tr>
+                    <td colspan="4"><textarea name="hist" class="hist" value="hist"></textarea>
+                    </td>
+                </tr>   
+                <tr>
+                    <td colspan="3"><input type="text" name="disp" class="disp" value="0"></td>
+                    <td colspan="1"><input type="button" class="calcBtn data-value="" data-type="RESET"
+                        " value="R" ></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="1" data-value="1"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="2" data-value="2"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="3" data-value="3"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="+" data-value="+"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="4" data-value="4"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="5" data-value="5"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="6" data-value="6"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="-" data-value="-"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="7" data-value="7"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="8" data-value="8"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="9" data-value="9"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="*" data-value="*"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="." data-value="."  data-type="DOT"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="0" data-value="0"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="=" data-value="="  data-type="EQUAL"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="/" data-value="/"  data-type="SIGN"></td>
+                </tr>
+            </table>   
+       
+    </script>  
+    <script type="scientificCalViewTag" id="scientificCalViewTag">
+        
+            <table border="0" align="center" cellspacing="0" style="border:3px solid gray; box-shadow: currentColor; padding:8px; margin:20px 0px 0px 20px;">
+                <tr>
+                    <td colspan="5"><textarea name="hist" class="hist" value="hist"></textarea>
+                    </td>
+                </tr>   
+                <tr>
+                    <td colspan="3"><input type="text" name="disp" class="disp" value="0"></td>
+                    <td colspan="1"><input type="button" class="calcBtn
+                        " value="R" data-type="RESET"></td>
+                    <td colspan="1"><input type="button" class="calcBtn
+                        " value="^" data-value="^"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="1" data-value="1"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="2" data-value="2"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="3" data-value="3"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="+" data-value="+"  data-type="SIGN"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="sin" data-value="sin"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="4" data-value="4"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="5" data-value="5"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="6" data-value="6"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="-" data-value="-"  data-type="SIGN"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="cos" data-value="cos"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="7" data-value="7"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="8" data-value="8"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="9" data-value="9"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="*" data-value="*"  data-type="SIGN"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="tan" data-value="tan"  data-type="SIGN"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="calcBtn
+                        " value="." data-value="."  data-type="DOT"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="0" data-value="0"  data-type="NUMBER"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="=" data-value="="  data-type="EQUAL"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="/" data-value="/"  data-type="SIGN"></td>
+                    <td><input type="button" class="calcBtn
+                        " value="%" data-value="%"  data-type="SIGN"></td>
+                </tr>
+            </table>
+       
+    </script>  
+</body>
+     
+</html>

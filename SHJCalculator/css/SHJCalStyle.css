@@ -1,0 +1,36 @@
+
+.calcBtn, #addBtn{
+    background-color : white;
+    color : black;
+}
+
+.calcBtn{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    font-size: 20pt;}
+
+#addBtn{
+    width: 120px;
+    height: 40px;
+    margin-bottom: 5px;
+    font-size: 15pt;
+}
+
+.disp{
+    width: 200px;
+    height: 50px;
+    margin: 0px 5px 0px 5px;
+    border:2px solid #008eff;
+    font-size: 22pt;
+    text-align: right;
+}
+
+.hist{
+    width: 94%;
+    height: 100px;
+    margin: 5px 5px 0px 5px;
+    border:2px solid #008eff;
+    font-size: 15pt;
+    text-align: right;
+}
