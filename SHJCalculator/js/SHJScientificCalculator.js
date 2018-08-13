@@ -1,5 +1,6 @@
 function SHJScientificCalculator(param){
 	this.btnColor = param.btnColor;
+	this.bodyColor = param.bodyColor;
 	this.fnGetCalcViewTag = function() {
 		var temp = document.getElementById("scientificCalViewTag");	// 일반계산기 템플릿
 		return temp.innerHTML;
