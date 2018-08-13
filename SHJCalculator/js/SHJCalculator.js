@@ -2,6 +2,7 @@
 function SHJCalculator(param){
 	/* 계산기 타입(일반, 공학용) */
 	this.btnColor = param.btnColor;
+	this.bodyColor = param.bodyColor;
 	this.firstNum = 0;
 	this.secondNum = 0;
 	this.signal = '';
@@ -206,6 +207,8 @@ SHJCalculator.prototype.fnDecorateCalc = function() {
 		btnList[i].style.backgroundColor = this.btnColor;
 	}
 	
+	var calcBody = this.container.querySelector(".calcBody");
+		calcBody.style.backgroundColor = this.bodyColor;
 } // end of fnDecorateCalc();
 
 SHJCalculator.prototype.fnCalculate = function(){

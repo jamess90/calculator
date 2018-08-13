@@ -3,17 +3,21 @@ function fnAddCalcultator(){
 
 	var target1 = document.getElementById("selectType");		 // 종류 콤보박스
 	var target2 = document.getElementById("selectColor");		 // 색상 콤보박스
+    var target3 = document.getElementById("selectBodyColor");		 // 색상 콤보박스
     var calcType = target1.options[target1.selectedIndex].value; // 옵션 type 값
     var color = target2.options[target2.selectedIndex].value;	 // 옵션 color 값
+	var bodyColor = target3.options[target3.selectedIndex].value;	 // 바디 color 값
 	var cal;
 
 	if (calcType == "1") { //일반용
 		cal = new SHJCalculator({
-			"btnColor" : color
+			"btnColor" : color,
+			"bodyColor" : bodyColor
 		});	
 	} else { //공학용 
 		cal = new SHJScientificCalculator({
-			"btnColor" : color
+			"btnColor" : color,
+			"bodyColor" : bodyColor
 		});	
 	}															 // 입력된 계산기 종류와 색상을 파라미터로 계산기 객체를 생성
 	cal.fnCreateCalc();	
@@ -37,6 +41,16 @@ function fnInitOptionsView(){
 	document.getElementById('selectColor').options[5].value = BUTTON_COLOR.BLUE;
 	document.getElementById('selectColor').options[6].value = BUTTON_COLOR.PINK;
 	document.getElementById('selectColor').options[7].value = BUTTON_COLOR.RED;
+	
+	/* 셀렉트박스 - 바디색상 초기화 */
+	document.getElementById('selectBodyColor').options[0].value = BUTTON_COLOR.WHITE;
+	document.getElementById('selectBodyColor').options[1].value = BUTTON_COLOR.YELLOW;
+	document.getElementById('selectBodyColor').options[2].value = BUTTON_COLOR.ORANGE;
+	document.getElementById('selectBodyColor').options[3].value = BUTTON_COLOR.PURPLE;
+	document.getElementById('selectBodyColor').options[4].value = BUTTON_COLOR.GREEN;
+	document.getElementById('selectBodyColor').options[5].value = BUTTON_COLOR.BLUE;
+	document.getElementById('selectBodyColor').options[6].value = BUTTON_COLOR.PINK;
+	document.getElementById('selectBodyColor').options[7].value = BUTTON_COLOR.RED;
 	
 } // end of fnInitOptionsView();
 
