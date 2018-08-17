@@ -121,6 +121,7 @@ SHJCalculator.prototype.fnClickBtn = function(params){
 				this.fnCalculate();
 				this.histStr +=  '\n' + this.displayStr;
 			}
+			this.signal = text;
 			this.histStr += text; 	
 			this.status = STATUS.SIGN;
 
